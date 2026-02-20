@@ -9,6 +9,10 @@ import { budgetRouter } from './routes/budget.routes';
 import { guestRouter } from './routes/guest.routes';
 import { seatingRouter } from './routes/seating.routes';
 import { marketplaceRouter } from './routes/marketplace.routes';
+import { taskRouter } from './routes/task.routes';
+import { scheduleRouter } from './routes/schedule.routes';
+import { designRouter } from './routes/design.routes';
+import { websiteRouter } from './routes/website.routes';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -30,6 +34,10 @@ app.use('/api/budget', budgetRouter);
 app.use('/api/guests', guestRouter);
 app.use('/api/seating', seatingRouter);
 app.use('/api/marketplace', marketplaceRouter);
+app.use('/api/tasks', taskRouter);
+app.use('/api/schedule', scheduleRouter);
+app.use('/api', designRouter); // Design routes like /mood-boards
+app.use('/api/wedding-website', websiteRouter); // Specific prefix for website builder
 
 // Health Check
 app.get('/health', (req, res) => {
