@@ -13,6 +13,7 @@ import { taskRouter } from './routes/task.routes';
 import { scheduleRouter } from './routes/schedule.routes';
 import { designRouter } from './routes/design.routes';
 import { websiteRouter } from './routes/website.routes';
+import { coordinationRouter } from './routes/coordination.routes';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -37,7 +38,8 @@ app.use('/api/marketplace', marketplaceRouter);
 app.use('/api/tasks', taskRouter);
 app.use('/api/schedule', scheduleRouter);
 app.use('/api', designRouter); // Design routes like /mood-boards
-app.use('/api/wedding-website', websiteRouter); // Specific prefix for website builder
+app.use('/api/wedding-website', websiteRouter);
+app.use('/api/coordination', coordinationRouter);
 
 // Health Check
 app.get('/health', (req, res) => {
